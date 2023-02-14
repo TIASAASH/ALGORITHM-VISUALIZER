@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Algorithm Visualizer</title>
+    <meta name="google-site-verification" content="U0HcC1QqpeETdDFvRvwuUEajTrZWKRoEBt6JR6H5vbo" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="sv-removebg-preview.png" type="image/x-icon">
+</head>
+
+<body> 
+    <header>
+        <a href="#" class="logo"></a>
+        <div class="rightSide">
+            <div class="btns dayNight">
+                <ion-icon name="moon-outline"></ion-icon>
+                <ion-icon name="sunny-outline"></ion-icon>
+            </div>
+            <div class="btns menuToggle">
+                <ion-icon name="menu-outline"></ion-icon>
+                <ion-icon name="close-outline"></ion-icon>
+            </div>
+        </div>
+    </header>
+    <section class="main">
+        <video src="1st part (1).mp4" autoplay loop muted type="mp4"></video>
+        <img src="mask (1).jpg" class="mask">
+        <div class="heading">
+            <marquee direction="right" behavior="alternate">
+                <h4>Algorithm</h4>
+            </marquee>
+            <marquee direction="left" behavior="alternate">
+                <h3>Visualizer</h3>
+            </marquee>
+
+        </div>
+        <div class="copyrightText">
+            <div class="wrapper">
+                <div class="static-txt"><b>Team members - </b></div>
+                <ul class="dynamic-txts">
+                    <li><span><b>ANKIT CHITRAKAR</b></span></li>
+                    <li><span>&nbsp;&nbsp;&nbsp;<b>TIASA ASH&nbsp;&nbsp;&nbsp;</b></span></li>
+                    <li><span>&nbsp;&nbsp;<b>ANURADHA DAS</b>&nbsp;</span></li>
+
+                </ul>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Sidebar Navigation -->
+    <ul class="navigation">
+        <li class="home"><a href="index.html"><b>Home</b></a></li>
+        <li class="algo"><a href="Sorting/sorting.html"><b>Sorting Visualizer</b></a></li>
+        <li class="algo"><a href="Searching/searching.html"><b>Searching Visualizer</b></a></li>
+        <li class="about"><a href="About Us/about.html"><b>About Us</b></a></li>
+
+    </ul>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+        let dayNight = document.querySelector('.dayNight')
+        let menuToggle = document.querySelector('.menuToggle')
+        let body = document.querySelector('body')
+        let navigation = document.querySelector('.navigation')
+
+        dayNight.onclick = function () {
+            body.classList.toggle('dark')
+            dayNight.classList.toggle('active')
+        }
+
+        menuToggle.onclick = function () {
+            menuToggle.classList.toggle('active')
+            navigation.classList.toggle('active')
+        }
+    </script>
+</body>
+
+</html>

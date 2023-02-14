@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="sorting.css">
+    <link rel="stylesheet" href="prism.css">
+    <link rel="shortcut icon" href="../sv-removebg-preview.png" type="image/x-icon">
+    <title>Sorting Visualizer</title>
+</head>
+
+<body>
+
+    <!-- <div class="preloader"></div> -->
+
+    <section id="fullbody">
+        <!-- header containing title, generate new array, array size, speed -->
+        <header>
+            <h1 id="name"><a href="sorting.html"><span class="big">S</span>ORTING<span>🔥</span></a><a
+                    href="sorting.html"><span class="big">V</span>ISUALIZER</a></h1>
+            <div id="basic_btn">
+                <div class="gen">
+                    <div class="dropdown">
+                        <button class="select">
+                            <div class="selected">Click any Button</div>
+                            <!-- <div class="icon"></div> -->
+                        </button>
+                        <!-- <ul class="menu">
+                                <li>Linear Display</li>
+                                <li>Circular Display</li>
+                            </ul> -->
+                    </div>
+
+                    <div class="generate_new_array">
+                        <button id="generate">Generate New Array</button>
+                    </div>
+                </div>
+                <div class="sizespeed">
+                    <div class="array_range">
+                        <button id="size">Size : <span id="size_value"></span></button>
+                        <input type="range" id="size_slider" min="4" max="100" value="64">
+                    </div>
+
+                    <div class="array_speed">
+                        <button id="speed">Speed : <span id="speed_value"></span></button>
+                        <input type="range" id="speed_slider" min="1" max="5" value="5">
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main body contains 1 box with code, space and time complexity and another mainbox contains array and in below array in 1d format-->
+        <div id="working_area">
+            <div id="mainbody">
+                <!-- <div class="bar" style="height: 36px; width:1.3vw;">12</div>
+                <div class="bar" style="height:250px; width:1.3vw;">126</div>
+                <div class="bar" style="height:300px; width:1.3vw;">100</div>
+                <div class="bar" style="height:320px; width:1.3vw;">250</div>
+                <div class="bar" style="height:171px; width:1.3vw;">57</div> -->
+            </div>
+            <!-- <div class="result"> 
+                <div class="present">
+                    <div class="note">Element Present at: </div>
+                    <div class="index"></div>
+                </div>
+                <span class="boundary"></span>
+                <div class="stepCount">
+                    <div class="note" id="step
+                    ">Step Count: </div>
+                    <div class="step"></div>
+                </div>
+            </div> -->
+
+            <div id="buttons">
+                <button class="BubbleSort">Bubble Sort</button>
+                <button class="SelectionSort">Selection Sort</button>
+                <button class="InsertionSort">Insertion Sort</button>
+                <button class="MergeSort">Merge Sort</button>
+                <button class="QuickSort">Quick Sort</button>
+                <!-- <button id="sorting">
+                    <ion-icon name="arrow-round-back"></ion-icon>
+                    <a href="/Resorces/home.png"></a>
+                </button> -->
+                <a href="../index.html"><ion-icon name="home"></ion-icon></a>
+
+            </div>
+
+        </div>
+
+        <!-- Footer part contains description of time complexity space complexity and Code  -->
+
+        <footer>
+            <div id="description">
+                <div class="code">
+                    <div class="selectedPane">
+                        <span>Code in (Java)</span>
+                    </div>
+                    <pre id="code_java" style="font-family: 'Poppins', sans-serif;
+                    font-size: 15px;
+                    letter-spacing: 3px;">
+<code class="language-java">// Java program for implementation of Bubble Sort
+import java.util.*;
+
+class BubbleSort {
+    void bubbleSort(int arr[])
+    {
+        int n = arr.length;
+        for (int i = 0; i < n - 1; i++)
+            for (int j = 0; j < n - i - 1; j++)
+                if (arr[j] > arr[j + 1]) {
+                    // swap arr[j+1] and arr[j]
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+    }
+
+    /* Prints the array */
+    void printArray(int arr[])
+    {
+        int n = arr.length;
+        for (int i = 0; i < n; ++i)
+            System.out.print(arr[i] + " ");
+        System.out.println();
+    }
+
+    // Driver method to test above
+    public static void main(String args[])
+    {
+        BubbleSort ob = new BubbleSort();
+        int arr[] = { 5, 1, 4, 2, 8 };
+        ob.bubbleSort(arr);
+        System.out.println("Sorted array");
+        ob.printArray(arr);
+    }
+} 
+
+                            
+                                </code>
+                            </pre>
+                </div>
+
+                <div class="complexity">
+                    <div class="timeComplexity">
+                        <div class="selectedPane">
+                            <span>Time Complexity</span>
+                        </div>
+                        <pre id="time" style="font-family: 'Poppins', sans-serif;
+                        font-size: 15px;
+                        letter-spacing: 3px;">
+                        <code class="language-java">The above function always runs O(N2) time even if the array is sorted. 
+It can be optimized by stopping the algorithm if the inner loop didn’t cause any swap.
+
+Time Complexity: O(N2)
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="spaceComplexity">
+                        <div class="selectedPane">
+                            <span>Space Complexity</span>
+                        </div>
+                        <pre id="space" style="font-family: 'Poppins', sans-serif;
+                        font-size: 15px;
+                        letter-spacing: 3px;">
+                            <code class="language-java">The Space Complexity of the Bubble Sort Algorithm Bubble sort requires only a fixed amount of extra space for the flag, i, and size variables. 
+As a result, the space complexity of bubble sort is O. (1).
+
+Auxiliary Space: O(1)
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+        </footer>
+    </section>
+
+
+
+
+
+    <script src="sorting.js"></script>
+
+
+
+    <!-- icons load -->
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+
+    <!-- Prism js -->
+    <script src="prism.js"></script>
+
+    <!-- js files -->
+    <script src="merge.js"></script>
+    <!-- <script src="BinarySearch.js"></script> -->
+    <script src="bubble.js"></script>
+    <script src="insertion.js"></script>
+    <script src="selection.js"></script>
+    <script src="quick.js"></script>
+</body>
+
+</html>

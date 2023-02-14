@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="searching.css">
+    <link rel="stylesheet" href="prism.css">
+    
+    <link rel="shortcut icon" href="../sv-removebg-preview.png" type="image/x-icon">
+    <title>Searching Visualizer</title>
+</head>
+
+<body>
+
+    <!-- <div class="preloader"></div> -->
+
+    <section id="fullbody">
+        <!-- header containing title, generate new array, array size, speed -->
+        <header>
+            <h1 id="name"><a href="searching.html"><span class="big">S</span>EARCHING</a><a href="searching.html"><span
+                        class="big">V</span>ISUALIZER<span>🔥</span></a></h1>
+            <div id="basic_btn">
+                <div class="gen">
+                <div class="dropdown"> 
+                    <button class="select">
+                        <div class="selected">Click any Button</div>
+                        <!-- <div class="icon"></div> -->
+                    </button>
+                    <!-- <ul class="menu">
+                        <li>Linear Display</li>
+                        <li>Circular Display</li>
+                    </ul> -->
+                </div>
+ 
+                <div class="generate_new_array">
+                    <button id="generate">Generate New Array</button>
+                </div> 
+            </div>
+                <div class="sizespeed">
+                    <div class="array_range">
+                        <button id="size">Size : <span id="size_value"></span></button>
+                        <input type="range" id="size_slider" min="4" max="100" value="64">
+                    </div>
+
+                    <div class="array_speed">
+                        <button id="speed">Speed : <span id="speed_value"></span></button>
+                        <input type="range" id="speed_slider" min="1" max="5" value="5">
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main body contains 1 box with code, space and time complexity and another mainbox contains array and in below array in 1d format-->
+        <div id="working_area">
+            <div id="mainbody">
+                <!-- <div class="bars" style="height: 36px; width:1.3vw;">12</div>
+                <div class="bars" style="height:250px; width:1.3vw;">126</div>
+                <div class="bars" style="height:300px; width:1.3vw;">100</div>
+                <div class="bars" style="height:320px; width:1.3vw;">250</div>
+                <div class="bars" style="height:171px; width:1.3vw;">57</div> -->
+            </div>
+            <div class="result">
+                <div class="present">
+                    <div class="note">Element Present at: </div>
+                    <div class="index"></div>
+                </div>
+                <span class="boundary"></span>
+                <div class="stepCount">
+                    <div class="note" id="step
+                    ">Step Count: </div>
+                    <div class="step"></div>
+                </div>
+            </div>
+
+            <div id="buttons">
+                <button id="linear_Search">Linear Search</button>
+                <button id="binary_Search">Binary Search</button>
+                <form action="#">
+                    <input type="text" name="search" id="searchingVal" placeholder="Search (20-350)">
+                    <!-- <label for="searchval">Search (20-400)</label> -->
+                </form>
+                <!-- <button id="sorting">
+                    <ion-icon name="arrow-round-back"></ion-icon>
+                    <a href="/Resorces/home.png"></a>
+                </button> -->
+                <a href="../index.html"><ion-icon name="home"></ion-icon></a>
+
+            </div>
+
+        </div>
+
+        <!-- Footer part contains description of time complexity space complexity and Code  -->
+
+        <footer>
+            <div id="description">
+                <div class="code">
+                    <div class="selectedPane">
+                        <span>Code in (Java)</span>
+                    </div>
+                    <pre id="code_java" style="font-family: 'Poppins', sans-serif;
+                    font-size: 15px;
+                    letter-spacing: 3px;">
+                        <code class="language-java">// Java code for linearly searching x in arr[]. If x
+// is present then return its location, otherwise
+// return -1 
+
+class GFG {
+public static int search(int arr[], int x) 
+{
+    int N = arr.length;
+    for (int i = 0; i < N; i++) {
+        if (arr[i] == x)
+            return i;
+    }
+    return -1;
+}
+
+// Driver's code
+public static void main(String args[])
+{
+    int arr[] = { 2, 3, 4, 10, 40 };
+    int x = 10;
+
+    // Function call
+    int result = search(arr, x);
+    if (result == -1)
+        System.out.print(
+            "Element is not present in array");
+    else
+        System.out.print("Element is present at index "
+                        + result);
+}
+}
+                                </code>
+                            </pre>
+                </div>
+
+                <div class="complexity">
+                    <div class="timeComplexity">
+                        <div class="selectedPane">
+                            <span>Time Complexity</span>
+                        </div>
+                        <pre id="time" style="font-family: 'Poppins', sans-serif;
+                        font-size: 15px;
+                        letter-spacing: 3px;">
+                            <code class="language-java">> Best- case complexity = O (1) occurs when the search element is present at the first 
+element in the search array.
+> Worst- case complexity = O (n) occurs when the search element is not present in the 
+set of elements or array.
+> Average complexity = O (n) is referred to when the element is present somewhere 
+in the search array
+
+Time Complexity: O(N)
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="spaceComplexity">
+                        <div class="selectedPane">
+                            <span>Space Complexity</span>
+                        </div>
+                        <pre id="space" style="font-family: 'Poppins', sans-serif;
+                        font-size: 15px;
+                        letter-spacing: 3px;">
+                            <code class="language-java">> As the amount of extra data 
+                            in Linear Search is fixed, the Space Complexity is O(1).
+
+                            Space Complexity: O(1).
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+        </footer>
+    </section>
+
+
+
+
+
+    <script src="searching.js"></script>
+
+
+
+    <!-- icons load -->
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+
+    <!-- Prism js -->
+    <script src="prism.js"></script>
+
+    <!-- js files -->
+    <script src="LinearSearch.js"></script>
+    <!-- <script src="BinarySearch.js"></script> -->
+    <script src="Binary.js"></script>
+</body>
+
+</html>
